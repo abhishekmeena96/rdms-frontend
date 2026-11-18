@@ -17,7 +17,7 @@ It provides document management, metadata handling, collaboration, and workflow-
 - **Task Management** – View assigned documents and complete review or approval tasks through My Tasks.
 - **Workflow Status** – Track document status, including Pending, Approved and Rejected.
 - **Generate Cover Page** – Trigger cover-page generation through a backend API.
-- **Authentication** – Choose between Basic and Keycloak-based login.
+- **Authentication** – Frontend integration with Basic and Keycloak-based authentication.
 - **Navigation** – Customized sidebar navigation with folder tree support.
 
 ## Technology Stack
@@ -35,7 +35,7 @@ It provides document management, metadata handling, collaboration, and workflow-
 | Workflow Engine | Camunda |
 | Authentication | Basic Authentication, Keycloak |
 
-## Architecture
+## High-Level Application Integration
 
 RDMS extends the existing ACA application by combining reusable Alfresco components with custom Angular functionality.
 
@@ -72,7 +72,7 @@ My primary responsibility was **frontend development and customization using Ang
 
 ### Developed
 - Custom Document Detail Page.
-- Document Actions Panel.
+- Customized the existing Alfresco ACA Document Actions Panel.
 - Properties V2 dialog and supporting components.
 - Document comments functionality.
 - Workflow status interface.
