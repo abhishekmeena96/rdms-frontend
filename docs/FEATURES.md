@@ -1,165 +1,224 @@
 # RDMS – Frontend Features
 
-This document describes the frontend features developed and customized for **RDMS (Document Management System)** using the Angular-based Alfresco Content Application (ACA).
+## Overview
 
-My contribution to the project focused on frontend development, extending the existing ACA application with custom document management interfaces, user interactions, workflow functionality, and application customizations.
+RDMS is an enterprise document management application built by customizing the open-source **Alfresco Content Application (ACA)**.
 
-The backend services, workflow engine infrastructure, and identity management infrastructure were handled by other team members.
+This document describes the frontend features I developed, customized, and integrated as part of the RDMS project using Angular 17 and the Alfresco ACA framework.
+
+**Scope:** My contribution was focused on frontend development. Backend services, Camunda workflow engine implementation, and Keycloak infrastructure were handled by other team members.
 
 ---
 
 ## 1. Document Detail Page
 
-**Contribution:** Custom component development
+Developed a custom `DocumentDetailPage` component to provide a detailed document management experience.
 
-Developed a custom Angular component named `DocumentDetailPage`, extending the existing ACA application with a dedicated document detail experience.
+The page opens when a user selects a document from the document listing.
 
-When users select a document from the document listing, they can access its detailed view and related functionality.
+Key functionality:
 
-**Key functionality:**
+- Displays document information and details.
+- Provides access to document properties.
+- Displays document comments.
+- Shows document version history.
+- Displays current workflow status.
+- Provides access to available document actions.
 
-- Document viewing interface.
-- Document comments.
-- Version history.
-- Document workflow status.
-- Document actions panel.
+The component brings important document-related information and operations together in one interface.
 
-## 2. Document Comments
+## 2. Properties Management
 
-**Contribution:** Frontend feature development
+Developed and customized the frontend properties interface to organize and display document metadata.
 
-Implemented a comment management interface that allows users to collaborate and discuss documents.
+The properties interface includes sections such as:
 
-**Key functionality:**
+- **General** – General document information.
+- **Classification** – Document classification details.
+- **Lifecycle** – Document lifecycle information.
+- **Technical** – Technical document metadata.
+- **Audit** – Audit-related information.
+
+Integrated the frontend with the existing application services and APIs for document property operations.
+
+## 3. Document Comments
+
+Implemented frontend functionality for managing document comments.
+
+Key functionality:
 
 - Add new comments.
 - View existing comments.
 - Reply to comments.
-- Edit comments.
+- Edit existing comments.
 - Delete comments.
 
-## 3. Document Version History
+This provides users with a way to discuss and track information related to individual documents.
 
-**Contribution:** Frontend feature development
+## 4. Document Version History
 
-Implemented a version history interface to help users access and manage previous versions of documents.
+Customized the existing Alfresco version history presentation within the RDMS frontend.
 
-**Key functionality:**
+Key functionality:
 
 - Display document version numbers.
 - View previous document versions.
 - Download previous document versions.
 
-## 4. Document Workflow Status
+The implementation builds on the existing Alfresco version history functionality rather than replacing its underlying backend capabilities.
 
-**Contribution:** Frontend development and workflow integration
+## 5. Document Workflow Status
 
-Implemented a document status interface to display the current workflow status of a document.
+Developed the frontend workflow status interface to display the current status of a document.
 
-**Supported statuses:**
+Supported statuses include:
 
 - Pending
 - Approved
 - Rejected
 
-The frontend displays workflow-related information provided through the application's backend integration.
+The interface displays workflow information received through the application's integration with the workflow services.
 
-## 5. Workflow Management
+## 6. Workflow Management
 
-**Contribution:** Frontend development and Camunda integration
+Implemented frontend functionality for starting and assigning document workflows.
 
-Added a custom **Start Workflow** action to the document actions panel.
+The application supports the following workflow types:
 
-The feature allows users to initiate the available document workflow and assign a task to another user.
+- Review
+- Approval
 
-**Key functionality:**
+Key functionality:
 
-- Start the available workflow for a document.
-- Select a task type, such as Review or Approval.
-- Search for users through the user-management integration.
-- Assign the selected task to another user.
+- Start a workflow from the document actions panel.
+- Select the required workflow type.
+- Search for users through the user management integration.
+- Assign the workflow to another user.
+- Integrate the frontend workflow experience with the existing backend services.
 
-The workflow engine and backend processing were handled by the respective team members. My contribution focused on the frontend functionality and integration.
+The workflow engine and backend workflow implementation are handled by the backend team. My contribution focused on the Angular frontend and its integration.
 
-## 6. Document Actions Panel
+## 7. My Tasks and Task Completion
 
-**Contribution:** Customization of an existing ACA component
+Developed the frontend My Tasks experience for working with assigned document tasks.
 
-Customized the existing Alfresco ACA Document Actions Panel to support RDMS-specific document operations.
+Key functionality:
 
-The panel provides access to document actions such as existing Delete, Copy, and Preview functionality, along with additional configured actions.
+- View assigned documents and tasks.
+- Access review and approval tasks.
+- Open the relevant task interface.
+- Complete assigned workflow tasks through the frontend.
 
-**Key customization:**
+Also developed supporting workflow and task completion dialogs and integrated them with the available backend APIs.
 
-- Extended the existing document actions panel.
-- Added and configured custom document actions.
+## 8. Document Actions Panel
+
+Customized the existing Alfresco ACA `DocumentActionsPanelComponent` to support RDMS-specific document operations.
+
+The panel provides access to actions such as:
+
+- Delete
+- Copy
+- Preview
+- Start Workflow
+
+Key contributions:
+
+- Customized the existing ACA document actions panel.
+- Added and configured RDMS-specific actions.
 - Integrated the custom Start Workflow action.
-- Used existing ACA action handling and services where applicable.
+- Reused existing ACA actions and services where applicable.
+- Used ACA's extension and configuration mechanisms to integrate document actions.
 
-## 7. Sidebar and Navigation Customization
+## 9. Sidebar and Navigation Customization
 
-**Contribution:** Customization and component development
+Customized the existing ACA sidebar navigation to support RDMS navigation requirements.
 
-Customized the existing ACA sidebar to support RDMS navigation requirements.
-
-**Navigation sections include:**
+Navigation sections include:
 
 - My Home
 - Trash
 - Favorites
 - Personal Files
 
-Also developed a folder tree interface to display the folder hierarchy and allow users to navigate through subfolders.
+Also developed a custom folder tree interface to display subfolders within the navigation experience.
 
-## 8. Authentication Integration
+The tree focuses on folder navigation rather than displaying individual files.
 
-**Contribution:** Frontend authentication development and integration
+## 10. Authentication Integration
 
-Worked on the frontend authentication experience, extending the existing authentication approach.
+Developed separate frontend login interfaces for Basic authentication and Keycloak-based authentication.
 
-**Key functionality:**
+Key contributions:
 
-- Created separate login interfaces for Basic authentication and Keycloak-based authentication.
-- Updated the frontend authentication approach to support OAuth-based authentication.
+- Created a Basic login interface.
+- Created a Keycloak login interface.
+- Updated the frontend authentication approach from Basic authentication to an OAuth-based approach.
 - Integrated the frontend with the existing Keycloak authentication infrastructure.
 
-Keycloak server configuration and identity infrastructure were managed by other team members.
+Keycloak server configuration and infrastructure were managed by the team.
 
-## 9. ACA Configuration and Customization
+## 11. Generate Cover Page
 
-**Contribution:** Frontend application customization
+Integrated a frontend action for generating a document cover page.
 
-Extended the existing ACA application using its configuration-driven approach and reusable application services.
+Key functionality:
 
-**Areas of customization:**
+- Provides a user-accessible Generate Cover Page action.
+- Triggers the corresponding backend API.
+- Connects the frontend action with the existing backend functionality.
 
-- Document actions configuration.
-- Menus and navigation configuration.
-- Forms and fields configuration.
-- Custom components and extensions.
-- Reuse and customization of existing ACA services.
+The cover page generation logic is handled by the backend service.
 
-These customizations helped extend the existing application without rebuilding functionality that was already available through ACA.
+## 12. ACA Configuration and Customization
 
----
+Customized the Alfresco Content Application using its existing extension and configuration mechanisms.
 
-## Summary of Frontend Contribution
+Key contributions:
 
-My work on RDMS primarily involved extending and customizing the existing Alfresco Content Application rather than developing a completely separate document management frontend.
+- Worked with JSON-based ACA configuration.
+- Configured and integrated document actions.
+- Customized menus and navigation.
+- Worked with form and field configurations.
+- Integrated custom components and extensions.
+- Used `app.extensions.json` and `AppExtensionService` for application extension integration.
+- Reused existing ACA services and created or modified Angular services where required.
 
-The contribution covered:
-
-- Custom Angular component development.
-- Document detail and collaboration features.
-- Document version history and status interfaces.
-- Workflow-related frontend functionality.
-- Document actions and navigation customization.
-- Authentication and user-management integration.
-- NgRx state management and RxJS-based application logic.
-- Configuration-driven customization and service integration.
-
-**Technology areas:** Angular 17, TypeScript, NgRx, RxJS, Angular Material, Alfresco Content Application (ACA), JSON-based configuration, Keycloak integration, and Camunda workflow integration.
+These customizations allowed RDMS-specific functionality to be integrated into the existing Alfresco application.
 
 ---
 
-*Note: This document describes my individual frontend contribution to RDMS. It does not claim ownership of the complete RDMS system, backend implementation, workflow engine, or authentication infrastructure.*
+## Technical Areas
+
+The frontend work involved the following technologies and concepts:
+
+| Area | Technologies |
+|---|---|
+| Frontend Framework | Angular 17 |
+| Programming Language | TypeScript |
+| State Management | NgRx |
+| Reactive Programming | RxJS |
+| UI Components | Angular Material |
+| Alfresco Framework | Alfresco ACA / ADF |
+| Configuration | JSON-based ACA extensions |
+| Integration | REST APIs and Angular services |
+| Authentication Integration | Keycloak |
+| Workflow Integration | Camunda |
+
+## Contribution Summary
+
+My work focused on extending and customizing the existing Alfresco ACA frontend to support RDMS-specific document management and workflow requirements.
+
+The main areas of contribution included:
+
+- Developing custom Angular components and dialogs.
+- Customizing existing Alfresco ACA components.
+- Implementing document comments and properties interfaces.
+- Integrating document version history and workflow status.
+- Developing workflow initiation and task management interfaces.
+- Customizing document actions and sidebar navigation.
+- Implementing frontend authentication integration.
+- Working with NgRx, RxJS, Angular services, and JSON-based ACA extensions.
+- Integrating frontend functionality with existing Alfresco and backend APIs.
+
+**Project scope clarification:** This repository documents my frontend contribution to RDMS. It does not contain the complete RDMS application, backend implementation, Camunda workflow engine, or Keycloak infrastructure.
