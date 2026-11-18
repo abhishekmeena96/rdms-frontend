@@ -81,6 +81,7 @@ My primary responsibility was **frontend development and customization using Ang
 - Basic and Keycloak login interfaces.
 
 ### Customized and Integrated
+- Customized the existing Alfresco ACA Document Actions Panel.
 - Reused the existing Alfresco document viewer.
 - Customized the presentation of existing version history functionality.
 - Customized sidebar navigation and folder tree.
