@@ -30,6 +30,7 @@ The component brings important document-related information and operations toget
 ## 2. Properties Management
 
 Developed and customized the frontend properties interface to organize and display document metadata.
+Includes the Properties V2 dialog and its supporting Angular components.
 
 The properties interface includes sections such as:
 
