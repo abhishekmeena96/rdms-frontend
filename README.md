@@ -72,7 +72,6 @@ My primary responsibility was **frontend development and customization using Ang
 
 ### Developed
 - Custom Document Detail Page.
-- Customized the existing Alfresco ACA Document Actions Panel.
 - Properties V2 dialog and supporting components.
 - Document comments functionality.
 - Workflow status interface.
@@ -88,7 +87,7 @@ My primary responsibility was **frontend development and customization using Ang
 - Integrated document actions using `app.extensions.json` and `AppExtensionService`.
 - Integrated frontend functionality with Alfresco and team-developed REST APIs.
 - Connected the Generate Cover Page action to its backend API.
-
+  
 Backend development, Camunda workflow implementation and Keycloak infrastructure were handled by other team members.
 
 ## Project Scope
